@@ -29,6 +29,31 @@ uvicorn main:app --reload
 
 The API will be available at `http://127.0.0.1:8000`.
 
+## Deployment to Azure Container Instances
+
+This app can be deployed as a container to Azure Container Instances.
+
+### Prerequisites
+
+- Azure CLI installed and logged in (`az login`)
+- Docker (optional, for local testing)
+
+### Steps
+
+1. **Build the Docker image locally (optional)**:
+   ```sh
+   docker build -t carapi .
+   docker run -p 8000:8000 carapi
+   ```
+
+2. **Deploy to Azure**:
+   - Run the deployment script: `.\deploy-to-azure.ps1`
+   - Or follow the manual steps in the script.
+
+3. **Access the API**:
+   - The script will output the public URL (e.g., `https://carapi-demo.eastus.azurecontainer.io`)
+   - Append `/docs` for the interactive API documentation.
+
 ### Endpoints
 
 > ✅ The API starts with a pre-populated in-memory list of demo cars. No database is required.
