@@ -80,5 +80,6 @@ curl "http://127.0.0.1:8000/cars/search?query=mustang"
 curl http://127.0.0.1:8000/cars/brand/Toyota
 
 # Create a new car
-curl -X POST http://127.0.0.1:8000/cars -H "Content-Type: application/json" -d '{"make":"Ford","model":"Mustang","year":2023,"brand":"Ford"}'
+curl -X POST http://127.0.0.1:8000/cars -H "Content-Type: application/json" -d '{"make":"Ford","model":"Mustang","year":2023,"brand":"Ford"}' 
 ```
+# APIs
