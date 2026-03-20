@@ -89,12 +89,15 @@ def search_cars_by_brand(brand: str):
     return [car for car in _cars if car.brand.lower() == b]
 
 
-@app.get("/cars/{car_id}", response_model=Car)
-def get_car(car_id: int):
-    """Get a single car by ID."""
+
+@app.get("/cars/{car_id}/engine")
+def get_car_engine(car_id: int):
+    """Get the engine type of a car (intentionally raises server error)."""
+    # Find the car
     for car in _cars:
         if car.id == car_id:
-            return car
+            # Instead of returning engine type, raise an error
+            raise Exception(f"Server error while retrieving engine for car {car_id}")
     raise HTTPException(status_code=404, detail="Car not found")
 
 

@@ -62,6 +62,7 @@ This app can be deployed as a container to Azure Container Instances.
 - `GET /cars/search?query=<term>` — search cars by make/model/year
 - `GET /cars/brand/{brand}` — list cars by brand
 - `GET /cars/{car_id}` — get car by ID
+- `GET /cars/{car_id}/engine` — get car engine type (intentionally raises 500 error)
 - `POST /cars` — create a new car
 - `POST /cars/reset` — reset the list back to the seeded demo dataset
 - `PUT /cars/{car_id}` — update a car
